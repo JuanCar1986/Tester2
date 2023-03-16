@@ -1,0 +1,6 @@
+#Comment 1
+#Comment2
+Test1 https://localhost:5001/api/UserSettings Get {"languageId":"fi","measureUnitId":"metric","decimalSeparator":"."}
+#Comment 3
+Test2 https://localhost:5001/api/UserSettings Update {"LanguageId":"fi","MeasureUnitId":"metric","DecimalSeparator":"."}
+Test3 https://localhost:5001/api/Usersettings Get {"languageId":"fi","measureUnitId":"m","decimalSeparator":"."}

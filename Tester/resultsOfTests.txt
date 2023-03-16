@@ -1,0 +1,77 @@
+Test1          username: pomini
+SENZA TOKEN
+API: https://localhost:5001/api/UserSettings
+VERB: GET ---> 
+SPEC 401 UNAUTHORIZED RESPONSE: 401 UNAUTHORIZED ESITO: SUCCESSFULL
+******************************************************************************************************************
+Test2          username: pomini
+SENZA TOKEN
+API: https://localhost:5001/api/UserSettings
+VERB: UPDATE ---> 
+SPEC: 401 UNAUTHORIZED RESPONSE: 401 UNAUTHORIZED ESITO: SUCCESSFULL
+******************************************************************************************************************
+Test3          username: pomini
+SENZA TOKEN
+API: https://localhost:5001/api/Usersettings
+VERB: GET ---> 
+SPEC 401 UNAUTHORIZED RESPONSE: 401 UNAUTHORIZED ESITO: SUCCESSFULL
+******************************************************************************************************************
+Test1          username: operator
+SENZA TOKEN
+API: https://localhost:5001/api/UserSettings
+VERB: GET ---> 
+SPEC 401 UNAUTHORIZED RESPONSE: 401 UNAUTHORIZED ESITO: SUCCESSFULL
+******************************************************************************************************************
+Test2          username: operator
+SENZA TOKEN
+API: https://localhost:5001/api/UserSettings
+VERB: UPDATE ---> 
+SPEC: 401 UNAUTHORIZED RESPONSE: 401 UNAUTHORIZED ESITO: SUCCESSFULL
+******************************************************************************************************************
+Test3          username: operator
+SENZA TOKEN
+API: https://localhost:5001/api/Usersettings
+VERB: GET ---> 
+SPEC 401 UNAUTHORIZED RESPONSE: 401 UNAUTHORIZED ESITO: SUCCESSFULL
+******************************************************************************************************************
+Test1          username: pomini
+CON TOKEN
+API: https://localhost:5001/api/UserSettings
+VERB: GET ---> 
+SPECTED: Get
+ACTUALLY: {"languageId":"fi","measureUnitId":"metric","decimalSeparator":"."}     ESITO: SUCCESSFULL
+******************************************************************************************************************
+Test2          username: pomini
+CON TOKEN
+API: https://localhost:5001/api/UserSettings
+VERB: UPDATE ---> 
+SPECTED: {"LanguageId":"fi","MeasureUnitId":"metric","DecimalSeparator":"."}
+ACTUALLY: {"LanguageId":"fi","MeasureUnitId":"metric","DecimalSeparator":"."}     ESITO: SUCCESSFULL
+******************************************************************************************************************
+Test3          username: pomini
+CON TOKEN
+API: https://localhost:5001/api/Usersettings
+VERB: GET ---> 
+SPECTED: Get
+ACTUALLY: {"languageId":"fi","measureUnitId":"metric","decimalSeparator":"."}     ESITO: K.O.
+******************************************************************************************************************
+Test1          username: operator
+CON TOKEN
+API: https://localhost:5001/api/UserSettings
+VERB: GET ---> 
+SPECTED: Get
+ACTUALLY: {"languageId":"fi","measureUnitId":"metric","decimalSeparator":null}     ESITO: K.O.
+******************************************************************************************************************
+Test2          username: operator
+CON TOKEN
+API: https://localhost:5001/api/UserSettings
+VERB: UPDATE ---> 
+SPEC: 204 FORBIDDEN RESPONSE: 403 FORBIDDEN ESITO: K.O
+******************************************************************************************************************
+Test3          username: operator
+CON TOKEN
+API: https://localhost:5001/api/Usersettings
+VERB: GET ---> 
+SPECTED: Get
+ACTUALLY: {"languageId":"fi","measureUnitId":"metric","decimalSeparator":null}     ESITO: K.O.
+******************************************************************************************************************

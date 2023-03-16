@@ -1,4 +1,4 @@
-﻿namespace RSMS.Models.InputModels.Login
+﻿namespace Tester
 {
     public class LoginInputModel
     {
@@ -9,15 +9,15 @@
         public LoginInputModel(string username,
                                string password)
         {
-            this.Username = username;
-            this.Password = password;
+            Username = username;
+            Password = password;
         }
 
 
         public bool Validate()
         {
-            if (String.IsNullOrEmpty(this.Username)) return false;
-            if (String.IsNullOrEmpty(this.Password)) return false;
+            if (string.IsNullOrEmpty(Username)) return false;
+            if (string.IsNullOrEmpty(Password)) return false;
 
             return true;
         }

@@ -14,9 +14,21 @@ class Program
     static async Task Main(string[] args)
     {
         string apisFile= args[0];
+        List<Credentials> usersList = new List<Credentials>();
+        Credentials u1 = new Credentials();
+        u1.Username = "pomini";
+        u1.Password = "c";
+        Credentials u2 = new Credentials();
+        u2.Username = "operator";
+        u2.Password = "pomini";
+        usersList.Add(u1);
+        usersList.Add(u2);
+
         Testing t = new Testing();
         t.Url = "https://localhost:5001/api/Login";
-        await t.Test(apisFile);
+        await t.Test(apisFile, usersList);
+        //GestioneDB db = new GestioneDB();
+        //db.DataReader();
     }
 }
 
